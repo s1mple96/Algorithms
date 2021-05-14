@@ -66,7 +66,9 @@ public class GetMaxProfit {
              * dp[i][0/1]:0/1 表示是否持有股票
              */
             //递推公式
+            //没有持有股票的最大利润
             dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+            //持有股票的最大利润
             dp[i][1] = Math.max(dp[i - 1][1], -prices[i]);
         }
         //毋庸置疑,最后肯定是手里没有持有股票利润才会最大,也就是卖出去了
