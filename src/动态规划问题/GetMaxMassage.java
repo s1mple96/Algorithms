@@ -36,42 +36,26 @@ package 动态规划问题;
  */
 public class GetMaxMassage {
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 1, 4, 5, 3, 1, 1, 3};
+        int[] nums = new int[]{1, 2, 3, 1};
         GetMaxMassage massage = new GetMaxMassage();
         int res = massage.massage(nums);
         System.out.println(res);
     }
 
-    /**
-     *
-     *  一.确定状态:
-     *      定义一个二维数组dp[length][2]
-     *      dp[i][0]表示第i+1个 预约没有接 的最长总预约时间
-     *      dp[i][1]表示第i+1个 预约了接了 的最长总预约时间
-     *  二.找到转移公式:
-     *      dp[i][0] = max(dp[i-1][0],dp[i-1][1])
-     *      dp[i][1] = dp[i-1][0]+nums[i]
-     *
-     *  三.边界条件判断:
-     *      dp[0][0] = 0 第一个没接
-    *       dp[0][1] = nums[0],第一个接了
-     */
     public int massage(int[] nums) {
-        //边界条件判断
-        if (nums == null || nums.length ==0)
+        if (nums.length == 0) {
             return 0;
-        int length = nums.length;
-        int[][] dp = new int[length][2];
-        dp[0][0] = 0;//第1个 没接
-        dp[0][1] = nums[0];//第1个 接了
-        for (int i = 1; i < length; i++) {
-            //下面是递推公式
-            //若第1个 没接 ,则最大预约数
-            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1]);
-            //若第1个 接了 ,则最大预约数
-            dp[i][1] = dp[i - 1][0] + nums[i];
         }
-        //取两者的最大值
-        return Math.max(dp[length - 1][0], dp[length - 1][1]);
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        //dp为时刻最大的和
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        return dp[nums.length - 1];
     }
 }
