@@ -48,6 +48,9 @@ package 动态规划问题;
 //
 // Related Topics 数组 动态规划
 // 👍 988 👎 0
+
+import java.util.Arrays;
+
 /**
  * @author s1mple
  * @create 2021/5/14-13:52
@@ -77,4 +80,23 @@ public class GetUniquePaths {
                 dp[i][j] = dp[i-1][j]+dp[i][j-1];
         return dp[m - 1][n - 1];
     }
+
+    /**
+     * 上面的二维数组的递推公式,当前坐标的值只和左边与上面的值有关,和其他的无关,这样
+     * 二维数组造成了大量的空间浪费,所以我们可以把他改成一维数组.
+     * @param m
+     * @param n
+     * @return
+     */
+    public int uniquePaths2(int m, int n) {
+        int[] dp = new int[m];
+        Arrays.fill(dp, 1);
+        for (int j = 1; j < n; j++) {
+            for (int i = 1; i < m; i++) {
+                dp[i] += dp[i-1];
+            }
+        }
+        return dp[m - 1];
+    }
+
 }
