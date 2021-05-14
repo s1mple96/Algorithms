@@ -35,6 +35,12 @@ package 动态规划问题;
  * @create 2021/5/14-13:09
  */
 public class GetMaxMassage {
+    public static void main(String[] args) {
+        int[] nums = new int[]{2, 1, 4, 5, 3, 1, 1, 3};
+        GetMaxMassage massage = new GetMaxMassage();
+        int res = massage.massage(nums);
+        System.out.println(res);
+    }
 
     /**
      *
