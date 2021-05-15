@@ -38,9 +38,11 @@ public class GetCountSubstrings {
         int length = s.length();
         boolean[][] dp = new boolean[length][length];
         int count = 0;//回文串的数量
+        //字符串从后往前判断
         for (int j = 0; j < length; j++) {
             for (int i = 0; i <= j; i++) {
                 //如果i和j指向的字符串不一样,那么dp[i][j]久不能构成回文字符串
+                //不能构成回文字符串
                 if (s.charAt(i)!=s.charAt(j))
                     continue;
                 dp[i][j] = j - i <= 2 || dp[i + 1][j - 1];
