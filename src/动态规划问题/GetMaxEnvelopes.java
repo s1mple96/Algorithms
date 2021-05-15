@@ -41,6 +41,12 @@ import java.util.Arrays;
  * @create 2021/5/14-12:38
  */
 public class GetMaxEnvelopes {
+    public static void main(String[] args) {
+        int[][] nums = new int[][]{{2, 3}, {5, 4}, {6, 7}, {6, 5}, {6, 2}};
+        GetMaxEnvelopes envelopes = new GetMaxEnvelopes();
+        int i = envelopes.maxEnvelopes(nums);
+        System.out.println(i);
+    }
 
     /**
      * 关键问题是怎么对信封进行排序,我们可以先按照宽度进行升序排序,因为宽度是升序的,
