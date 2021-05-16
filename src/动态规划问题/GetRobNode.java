@@ -8,8 +8,7 @@ package 动态规划问题;
 public class GetRobNode {
     /**
      * 如果 偷 根节点,那么我们不能偷子节点也可以不偷子节点,我们取最大值即可
-     * dp[0] = root.val + left.dp[0]+right.dp[0];
-     * 这里的伪代码left.dp[0].表示的是不能偷当前节点的左子节点
+     * dp[0] = root.val + left.dp[0]+right.dp[0]; 这里的伪代码left.dp[0].表示的是不能偷当前节点的左子节点
      * 如果 不偷 根节点,那么我们可以偷子节点也可以不偷子节点,我们取最大值
      * dp[1] = max(left.dp[0],left.dp[1])+max(right.dp[0],right.dp[1]);
      *
