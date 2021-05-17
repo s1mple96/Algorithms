@@ -40,7 +40,6 @@ public class GetMaxSubArray {
 
 
     /**
-     *
      * 一.确定状态:
      *      定义dp[i] 表示数组中前i+1个元素构成的连续子数组的最大和.
      * 二.找到转移公式:
@@ -50,7 +49,6 @@ public class GetMaxSubArray {
      *      转移公式:dp[i]=num[i]+max(dp[i-1],0)
      * 三.边界条件判断:
      *      当i等于0时,也就是前1个元素,他能构成的最大和也就是他自己,所以:dp[0]=num[0]
-     *
      */
     public int maxSubArray(int[] nums) {
         int length = nums.length;
