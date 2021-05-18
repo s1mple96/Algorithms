@@ -29,6 +29,7 @@ public class FindContinuousSequenceDemo {
                 //如果窗口内的值正好等于target,就把窗口内的值记录下来
                 //然后窗口的左边和右边同时往右移动
                 int[] arr = new int[right - left + 1];
+                //因为他是连续的数组.所以可以这样写
                 for (int k = left; k <= right; k++) {
                     arr[k - left] = k;
                 }
