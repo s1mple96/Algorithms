@@ -15,6 +15,7 @@ public class GetMinWindow {
         Map<Character, Integer> map = new HashMap<>();
         for (char ch : t.toCharArray()) {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
 
         int left = 0;//窗口的左边界
