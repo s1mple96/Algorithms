@@ -8,7 +8,7 @@ package backtracking;
 public class Backtrack {
 
 
-    private void backtrack("原始参数") {
+    /*private void backtrack("原始参数") {
         //终止条件(递归必须要有终止条件)
         if ("终止条件") {
             //一些逻辑操作(可有可无,视情况而定)
@@ -22,5 +22,5 @@ public class Backtrack {
             //一些逻辑操作(可有可无,视情况而定)
             //撤销选择
         }
-    }
+    }*/
 }
