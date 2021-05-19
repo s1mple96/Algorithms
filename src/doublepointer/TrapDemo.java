@@ -6,6 +6,9 @@ package doublepointer;
  */
 public class TrapDemo {
 
+    public static void main(String[] args) {
+
+    }
     public int trap(int[] height) {
         if (height.length <= 2) {
             return 0;
@@ -22,7 +25,7 @@ public class TrapDemo {
 
         //统计最高柱子左边能接的雨水数量
         int left = height[0];
-        int right = 0;
+        int right = 1;
         int water = 0;
         for (int i = 1; i < maxIndex; i++) {
             right = height[i];
@@ -35,7 +38,7 @@ public class TrapDemo {
 
         //统计最高柱子右边能接到的雨水数量
         right = height[height.length - 1];
-        for (int i = height.length - 2; i > maxIndex; i++) {
+        for (int i = height.length - 2; i > maxIndex; i--) {
             left = height[i];
             if (right < left) {
                 right = left;
