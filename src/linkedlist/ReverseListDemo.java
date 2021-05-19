@@ -9,6 +9,30 @@ import java.util.Stack;
  * @create 2021/5/19-17:47
  */
 public class ReverseListDemo {
+    /**
+     * 递归方法
+     * @param head
+     * @return
+     */
+    public ListNode reverseList3(ListNode head) {
+        //递归终止
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //保存当前节点的下一个节点
+        ListNode next = head.next;
+        //从当前节点的下一个节点开始递归调用
+        ListNode reverse = reverseList3(next);
+        /**
+         * reverse是反转之后的链表,因为函数reverseList表示的是对链表的反转
+         * ,所以反转完之后next肯定是链表reverse的尾结点,然后我们再把当前节点
+         * head挂到next节点的后面就完成了链表的反转
+         */
+        next.next = head;
+        //这里head相当于变成了尾结点,尾结点都是为空的,否则会构成环
+        head.next = null;
+        return reverse;
+    }
 
     /**
      * 双链表方法
