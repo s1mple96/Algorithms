@@ -23,7 +23,7 @@ public class LengthOfLongestSubstringDemo {
         for (int i = 0, j = 0; i < s.length(); i++) {
             //如果有重复的,就修改j的值
             if (map.containsKey(s.charAt(i))) {
-                //j取的是重复元素位置的下一个值和j这两个值的最大值
+                //j取的是第一个重复元素位置的下一个值和j这两个值的最大值
                 j = Math.max(j, map.get(s.charAt(i)) + 1);
             }
             map.put(s.charAt(i), i);
