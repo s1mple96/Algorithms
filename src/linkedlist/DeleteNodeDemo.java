@@ -7,7 +7,26 @@ import doublepointer.ListNode;
  * @create 2021/5/20-19:03
  */
 public class DeleteNodeDemo {
+
     public ListNode deleteNode(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        if (head.val == val) {
+            return head.next;
+        }
+        head.next = deleteNode(head.next, val);
+        return head;
+    }
+
+
+    /**
+     * 指针解法
+     * @param head
+     * @param val
+     * @return
+     */
+    public ListNode deleteNode2(ListNode head, int val) {
         //边界条件判断
         if (head == null) {
             return head;
