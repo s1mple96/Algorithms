@@ -7,7 +7,7 @@ import java.util.Stack;
  * @author s1mple
  * @create 2021/5/22-12:26
  */
-public class NextGreaterElementsDemo {
+public class   NextGreaterElementsDemo {
     public int[] nextGreaterElements(int[] nums) {
         int length = nums.length;
         int res[] = new int[length];
