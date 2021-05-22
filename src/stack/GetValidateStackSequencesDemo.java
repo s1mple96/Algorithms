@@ -11,6 +11,7 @@ public class GetValidateStackSequencesDemo {
         Stack<Integer> stack = new Stack<>();
         int index = 0;
         for (int num : pushed) {
+            //pushed数组中的元素逐个入栈
             stack.push(num);
             while (!stack.isEmpty() && stack.peek() == popped[index]) {
                 stack.pop();
