@@ -10,11 +10,6 @@ import java.util.List;
  * @create 2021/5/22-21:37
  */
 public class FindModeDemo {
-    List<Integer> mList = new ArrayList<>();
-    int current = 0;    //表示当前节点的值
-    int count = 0;      //当前节点值相同的节点数量
-    int maxCount = 0;   //最大的重复数量
-
     public int[] findMode(TreeNode root) {
         inOrderTraversal(root);
         int[] res = new int[mList.size()];
@@ -24,6 +19,11 @@ public class FindModeDemo {
         }
         return res;
     }
+
+    List<Integer> mList = new ArrayList<>();
+    int current = 0;    //表示当前节点的值
+    int count = 0;      //当前节点值相同的节点数量
+    int maxCount = 0;   //最大的重复数量
 
     //递归方式
     public void inOrderTraversal(TreeNode node) {
