@@ -13,7 +13,7 @@ public class SortedArrayToBSTDemo {
         if (num.length == 0) {
             return null;
         }
-        return sortedArrayToBST(num,0,num.length-1);
+        return sortedArrayToBST(num, 0, num.length - 1);
     }
 
     /**
