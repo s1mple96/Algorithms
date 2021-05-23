@@ -3,6 +3,7 @@ package tree;
 import 数据结构.TreeNode;
 
 /**
+ * 递归的方式,每次取中间值作为当前节点即可
  * @author s1mple
  * @create 2021/5/22-21:03
  */
