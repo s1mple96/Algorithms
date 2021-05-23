@@ -14,8 +14,8 @@ public class IsBalancedDemo {
         //分别计算左子树和右子树的高度
         int left = depth(root.left);
         int right = depth(root.right);
-        //这两个子树的高度不能超过1
-        return Math.abs(left - right) <= 1;
+        //这两个子树的高度不能超过1,并且他的两个子树也必须满足平衡二叉树
+        return Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right);
     }
 
     /**
