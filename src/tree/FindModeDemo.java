@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 这题首先要搞懂的是:二叉搜索树的中序遍历结果是排序的，
  * @author s1mple
  * @create 2021/5/22-21:37
  */
