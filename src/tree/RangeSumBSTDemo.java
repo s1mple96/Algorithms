@@ -32,7 +32,7 @@ public class RangeSumBSTDemo {
             return rangeSumBST(root.right, low, high);
         }
         //如果当前节点值在[low,high]之间,就留下
-        return root.val + rangeSumBST(root.left, low, high);
+        return root.val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
     }
 
 
