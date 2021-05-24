@@ -106,7 +106,7 @@ public class RightSideViewDemo {
         while (!queue.isEmpty()) {
             //每一层的数量
             int count = queue.size();
-            while (count-- > 0) {
+            while (count-- > 0) {//它的意思是循环n次，除了最常用的 for (int i = 0; i < n; ++i) {...} 之外，还可以写 while (n-- > 0) {...} 和 while (--n >= 0) {...}。
                 //当前节点出队
                 TreeNode cur = queue.poll();
                 //因为每层是从左往右依次入队的,所以每层的
