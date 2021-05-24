@@ -2,9 +2,7 @@ package tree;
 
 import 数据结构.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author s1mple
@@ -86,6 +84,43 @@ public class RightSideViewDemo {
             if (node.right != null) {
                 stackNode.push(node.right);
                 stackLevel.push(level + 1);
+            }
+        }
+        return res;
+    }
+
+    /**
+     * BFS解法
+     * @param root
+     * @return
+     */
+    private List<Integer> rightSideView3(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        //终止条件判断
+        if (root == null) {
+            return res;
+        }
+        //创建队列
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            //每一层的数量
+            int count = queue.size();
+            while (count-- > 0) {
+                //当前节点出队
+                TreeNode cur = queue.poll();
+                //因为每层是从左往右依次入队的,所以每层的
+                //最后一个就是我们所需要的
+                if (count == 0) {
+                    res.add(cur.val);
+                }
+                //左子树如果不为空,左子树入队,右子树不为空,右子树入队
+                if (cur.left != null) {
+                    queue.add(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.add(cur.right);
+                }
             }
         }
         return res;
