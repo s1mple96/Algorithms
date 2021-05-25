@@ -2,10 +2,10 @@ package tree;
 
 import 数据结构.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
+ * B是A的子结构不一定是从根节点开始判断B是否是A的子结构，
+ * 也有可能B是A左子树或 右子树的子结构，
+ * 所以如果从根节点判断B不是A的子结构的时候还要分别判断A的子树 中是否包含B
  * @author s1mple
  * @create 2021/5/24-6:09
  */
@@ -16,6 +16,9 @@ public class IsSubStructureDemo {
         if (A == null || B == null) {
             return false;
         }
+        /**
+         * 还需要判断A的子树中是否包含B
+         */
         return isSub(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
     }
 
