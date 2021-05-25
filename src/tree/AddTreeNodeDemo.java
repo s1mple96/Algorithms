@@ -33,4 +33,13 @@ public class AddTreeNodeDemo {
             }
         }
     }
+
+    public TreeNode bstFromPreorder(int[] preorder) {
+        TreeNode root = new TreeNode();
+        root.val = preorder[0];
+        for (int i = 1; i < preorder.length; i++) {
+            addTreeNode(root, preorder[i]);
+        }
+        return root;
+    }
 }
