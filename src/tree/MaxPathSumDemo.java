@@ -7,6 +7,20 @@ import 数据结构.TreeNode;
  * @create 2021/5/25-19:45
  */
 public class MaxPathSumDemo {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(8);
+        root.left = new TreeNode(5);
+        root.right = new TreeNode(10);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(7);
+        root.right.right = new TreeNode(12);
+        root.right.left = new TreeNode(22);
+        MaxPathSumDemo sumDemo = new MaxPathSumDemo();
+         int sum = sumDemo.maxPathSum(root);
+        System.out.println(sum);
+    }
+
+
     private int maxValue = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         maxPathSumHelper(root);
@@ -18,7 +32,7 @@ public class MaxPathSumDemo {
             return 0;
         }
         //左子节点的值
-        int left = maxPathSumHelper(root.left);
+         int left = maxPathSumHelper(root.left);
         //右子节点的值
         int right = maxPathSumHelper(root.right);
         //第四种情况
