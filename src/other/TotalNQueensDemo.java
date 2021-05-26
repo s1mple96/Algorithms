@@ -18,7 +18,7 @@ public class TotalNQueensDemo {
         if (row == chess.length) {
             //自己写的一个公共方法,打印二维数组的,
             //主要用于测试数据用的
-            Util.printTwoCharArrays(chess);
+//            Util.printTwoCharArrays(chess);
             System.out.println();
             return;
         }
