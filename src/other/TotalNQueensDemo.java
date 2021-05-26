@@ -12,6 +12,7 @@ public class TotalNQueensDemo {
             for (int j = 0;j < n;j++)
                 chess[i][j] = '.';
         solve(chess, 0);
+        return 0;
     }
 
     private void solve(char[][] chess, int row) {
