@@ -4,6 +4,12 @@ package backtracking;
  * @author s1mple
  * @create 2021/5/27-18:12
  */
+
+/**
+ * 回溯往往会伴随着递归,要想搞懂回溯,必须要搞懂递归,搞懂了递归,回溯就很容易
+ * 理解了,其实递归我们可以把他抽象成一颗N叉树的遍历,递归的过程也就是沿着子
+ * 节点走下去的过程,并且递归必须要有终止条件,不能无限制的递归下去
+ */
 public class ExistDemo {
     public boolean exist(char[][] board, String word) {
         char[] words = word.toCharArray();
