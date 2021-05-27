@@ -30,7 +30,7 @@ public class PathSumDemo {
             if (sum == root.val) {
                 result.add(new ArrayList<>(list));
             }
-            //注意了,别忘了把最后加入的节点值给移除叼,因为在下一步直接return了,
+            //注意了,别忘了把最后加入的节点值给移除掉,因为在下一步直接return了,
             //不会再走最后一行的remove了,所以这里return之前提前把最后一个节点
             //的值给remove掉.
             list.remove(list.size() - 1);
