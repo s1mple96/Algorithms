@@ -27,8 +27,7 @@ public class Search {
         }
         a[index] = key;
         int i = 0;
-        while (a[i++] != key) {
-            return i == index + 1 ? -1 : i - 1;
-        }
+        while (a[i++] != key);
+        return i == index + 1 ? -1 : i - 1;
     }
 }
