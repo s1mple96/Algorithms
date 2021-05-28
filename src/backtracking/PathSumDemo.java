@@ -10,7 +10,45 @@ import java.util.List;
  * @create 2021/5/27-18:53
  */
 public class PathSumDemo {
+
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        List<List<Integer>> result = new ArrayList<>();
+        dfs(root, sum, 0, new ArrayList<>(), result);
+        return result;
+    }
+
+    private void dfs(TreeNode root, int sum, int total, List<Integer> list, List<List<Integer>> result) {
+        //如果节点为空直接返回
+        if (root == null) {
+            return;
+        }
+        //把当前节点值加入到list中
+        list.add(new Integer(root.val));
+        //每往下走一步就要计算走过的路径和
+        total += root.val;
+        //如果到达叶子节点,就不能往下走了,直接return
+        if (root.left == null && root.right == null) {
+            //如果到达叶子节点,并且sum等于total,说明我们找到了一组
+            //要把它放到result中
+            if (sum == total) {
+                result.add(new ArrayList<>(list));
+            }
+            //注意别忘了吧最后加入的节点值给移除掉,因为下一步直接return了
+            //不会再走最后一行的remove了,所以这里再return之前提前把最后
+            //一个节点的值给remove掉.
+            list.remove(list.size() - 1);
+            //到叶子节点之后直接返回,因为在往下走就走不动了
+            return;
+        }
+        //如果没到达叶子节点,就继续从他的左右两个子节点往下找
+        dfs(root.left, sum, total, list, result);
+        dfs(root.right, sum, total, list, result);
+        //我们要理解递归的本质,当递归往下传递的时候他最后还是会往回走.
+        //我们把这个值使用完之后还要把她给移除,这就是回溯
+        list.remove(list.size() - 1);
+    }
+
+    /*public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> result = new ArrayList<>();
         dfs(root, sum, new ArrayList<>(), result);
         return result;
@@ -44,7 +82,7 @@ public class PathSumDemo {
         //我们要理解递归的本质,当递归往下传递的时候他最后还是会往回走,
         //我们把这个值使用玩之后还要把她给移除,这就是回溯
         list.remove(list.size() - 1);
-    }
+    }*/
 
     /*//DFS方法
     private void dfs(TreeNode root, int sum, List<Integer> list, List<List<Integer>> result) {
