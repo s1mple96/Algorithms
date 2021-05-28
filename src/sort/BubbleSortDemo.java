@@ -27,13 +27,17 @@ public class BubbleSortDemo {
      * @param arr
      */
     public static void bubbleSort2(int[] arr) {
-        int n = arr.length;
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < n - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
+        boolean flag = true;
+        int count = arr.length - 1;
+        while (flag) {
+            flag = false;
+            for (int i = 0; i < count; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                    flag = true;
                 }
             }
+            count--;
         }
     }
 
