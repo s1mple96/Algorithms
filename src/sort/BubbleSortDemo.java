@@ -23,7 +23,7 @@ public class BubbleSortDemo {
 
     /**
      * 每次循环的时候j都是从0开始的,并且是相邻两个元素的比较,所以第一轮比完之后
-     * 会吧最大的值放到数组的最后,第二轮的时候会把第二大的值放到数组的倒数第二
+     * 会吧最大的值放到数组的最后,第二轮的时候会把第2二大的值放到数组的倒数第二
      * @param arr
      */
     public static void bubbleSort2(int[] arr) {
