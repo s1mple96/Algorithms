@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @create 2021/5/29-11:26
  */
 public class SelectSortDemo {
-    private static void selectSort(int[] arr) {
+    private static int[] selectSort(int[] arr) {
         int[] array = Arrays.copyOf(arr, arr.length);
         //总共要经过N-1轮比较
         for (int i = 0; i < array.length; i++) {
@@ -26,6 +26,7 @@ public class SelectSortDemo {
                 arr[min] = temp;
             }
         }
+        return array;
     }
 
 }
