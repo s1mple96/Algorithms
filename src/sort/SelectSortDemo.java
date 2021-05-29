@@ -19,6 +19,20 @@ public class SelectSortDemo {
         }
     }
 
+    private static void selectSort(int arr[], int index) {
+        if (index == arr.length) {
+            return;
+        }
+        int min = index, i = index + 1;
+        for (; i < arr.length; i++) {
+            if (arr[i] < arr[min]) min = i;
+        }
+        if (min != index) {
+            swap(arr, index, min);
+        }
+        selectSort(arr, ++index);
+    }
+
     private static void swap(int[] arr, int i, int j) {
         if (i != j) {
             int temp = arr[i];
