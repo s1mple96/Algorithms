@@ -14,6 +14,13 @@ public class HeapSortDemo {
         }
     }
 
+    private static void buildMaxHeap(int[] arr, int heapSize) {
+        //从最后一个非叶子节点开始循环
+        for (int i = (heapSize - 2) >> 1; i >= 0; i--) {
+            maxHeapfy(arr, i, heapSize);
+        }
+    }
+
     private static void maxHeapfy(int[] arr, int i, int heapSize) {
         int left = i * 2 + 1;
         int right = 1 * 2 + 2;
@@ -30,12 +37,6 @@ public class HeapSortDemo {
         }
     }
 
-    private static void buildMaxHeap(int[] arr, int heapSize) {
-        //从最后一个非叶子节点开始循环
-        for (int i = (heapSize - 2) >> 1; i >= 0; i--) {
-            maxHeapfy(arr, i, heapSize);
-        }
-    }
     private static void swap(int[] arr, int i, int j) {
         if (i != j) {
             int temp = arr[i];
