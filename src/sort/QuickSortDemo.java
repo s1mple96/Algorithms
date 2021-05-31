@@ -15,6 +15,9 @@ public class QuickSortDemo {
                 }
             }
             arr[start] = arr[i];//先挪,然后再把中枢放到指定位置
+            arr[i] = key;
+            quickSort(arr, start, i - 1);
+            quickSort(arr, i + 1, end);
         }
     }
 
