@@ -105,7 +105,7 @@ public class JosephusDemo {
                 point = 0;
             }
             if (number % k == 0) {
-                mList.remove(point);
+               mList.remove(point);
                 continue;
             }
             point++;
