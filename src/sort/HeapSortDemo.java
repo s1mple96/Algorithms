@@ -5,6 +5,10 @@ package sort;
  * @create 2021/5/31-11:33
  */
 public class HeapSortDemo {
+    /**
+     * 对数组进行排序
+     * @param arr
+     */
     public static void heapSort(int[] arr) {
         int length = arr.length;
         buildMaxHeap(arr, length);
@@ -14,6 +18,11 @@ public class HeapSortDemo {
         }
     }
 
+    /**
+     * 堆的构建
+     * @param arr
+     * @param heapSize
+     */
     private static void buildMaxHeap(int[] arr, int heapSize) {
         //从最后一个非叶子节点开始循环
         for (int i = (heapSize - 2) >> 1; i >= 0; i--) {
@@ -21,6 +30,12 @@ public class HeapSortDemo {
         }
     }
 
+    /**
+     * 堆的调整
+     * @param arr
+     * @param i
+     * @param heapSize
+     */
     private static void maxHeapfy(int[] arr, int i, int heapSize) {
         int left = i * 2 + 1;
         int right = 1 * 2 + 2;
