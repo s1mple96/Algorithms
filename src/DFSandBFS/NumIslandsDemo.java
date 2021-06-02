@@ -41,7 +41,7 @@ public class NumIslandsDemo {
      */
     public void dfs(char[][] grid, int i, int j) {
         //边界条件判断
-        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '1') {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0') {
             return;
         }
         //把当前格子置为0,然后再从他的上下左右四个方向继续遍历
