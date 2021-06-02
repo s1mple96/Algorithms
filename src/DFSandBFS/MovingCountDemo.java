@@ -27,9 +27,9 @@ public class MovingCountDemo {
             //这里的poll()方法表示的是一出队列头部元素,因为列队是
             //先进先出的,从队尾添加,从头部移除
             int[] x = queue.poll();
-            int i = x[0], j = x[0];
+            int i = x[0], j = x[1];
             //i>=m||j>=n是边界条件的判断,k<sum(i,j)判断当前格子坐标是否满足条件,visited[i][j]判断这个格子是否被访问过
-            if (i >= m || j >= n || visited[i][j]) {
+            if (i >= m || j >= n || k < sum(i, j) || visited[i][j]) {
                 continue;
             }
             //标注这个格子被访问过
