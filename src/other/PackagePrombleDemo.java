@@ -4,7 +4,7 @@ package other;
  * @author s1mple
  * @create 2021/6/1-19:42
  */
-public class BackpackDemo {
+public class PackagePrombleDemo {
 
     public static int packageProbolem1() {
         int packageConatainWeight = 4;//包最大可装重量
