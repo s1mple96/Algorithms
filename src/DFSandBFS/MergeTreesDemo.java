@@ -8,6 +8,9 @@ import java.util.Queue;
 /**
  * @author s1mple
  * @create 2021/6/3-22:40
+ *
+ * 总结:
+ *  DFS和BFS
  */
 public class MergeTreesDemo {
     /**
@@ -63,7 +66,7 @@ public class MergeTreesDemo {
             TreeNode node2 = queue.poll();
             //把这两个节点的值相加,然后合并到第1棵树的节点上
             node1.val += node2.val;
-            if (node1.left != null) {
+            if (node1.left == null) {
                 //如果node1左子节点为空,我们直接让node2的左子节点成为node1的左子节点
                 node1.left = node2.left;
             } else {
