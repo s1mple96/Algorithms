@@ -9,7 +9,11 @@ import java.util.Stack;
  * @create 2021/6/2-19:45
  */
 public class SumNumbersDemo {
-
+    /**
+     * DFS遍历
+     * @param root
+     * @return
+     */
     public int sumNumbers(TreeNode root) {
         //如果根节点是空,直接返回0即可
         if (root == null) {
@@ -31,7 +35,7 @@ public class SumNumbersDemo {
                 //把这条路径的值加入到全局变量res中
                 res += value;
             } else {
-                //如果不是叶子节点就指向下面的操作
+                //如果不是叶子节点就指向下面的操作根到叶子节点数字之和
                 if (node.right != null) {
                     //把子节点和叶子节点的值分别加入到栈中,这里子节点的值
                     //就是父节点的值*10+当前节点的值
@@ -45,5 +49,22 @@ public class SumNumbersDemo {
             }
         }
         return res;
+    }
+    //优化
+    public int sumNumbers2(TreeNode root) {
+        return dfs(root, 0);
+    }
+    private int dfs(TreeNode root, int sum) {
+        //终止条件的判断
+        if (root==null)
+            return 0;
+        //计算当前节点的值
+        sum = sum * 10 + root.val;
+        //如果当前节点是叶子节点,说明找到了一条完整路径,直接返回这条路径即可
+        if (root.left == null && root.right == null) {
+            return sum;
+        }
+        //如果当前节点不是叶子节点,返回左右子节点的路径和
+        return dfs(root.left, sum) + dfs(root.right, sum);
     }
 }
