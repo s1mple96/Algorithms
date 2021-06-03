@@ -7,6 +7,13 @@ import java.util.*;
  * @create 2021/6/3-21:18
  */
 public class LadderLengthDemo {
+    /**
+     * 一圈一圈往外扩散
+     * @param beginWord
+     * @param endWord
+     * @param wordList
+     * @return
+     */
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         //把字典中的单词放入到set中,主要是为了方便查询
         Set<String> dictSet = new HashSet<>(wordList);
