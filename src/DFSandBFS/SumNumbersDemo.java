@@ -2,6 +2,8 @@ package DFSandBFS;
 
 import 数据结构.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -66,5 +68,40 @@ public class SumNumbersDemo {
         }
         //如果当前节点不是叶子节点,返回左右子节点的路径和
         return dfs(root.left, sum) + dfs(root.right, sum);
+    }
+
+    public int sumNumbers3(TreeNode root) {
+        //边界条件判断
+        if (root == null) {
+            return 0;
+        }
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        Queue<Integer> valueQueue = new LinkedList<>();
+        int res = 0;
+        nodeQueue.add(root);
+        valueQueue.add(root.val);
+        while (!nodeQueue.isEmpty()) {
+            //节点和节点对应的值同时出队
+            TreeNode node = nodeQueue.poll();
+            int value = valueQueue.poll();
+            if (node.left == null && node.right == null) {
+                //如果当前节点是叶子节点,说明找到了一条路径,把这条
+                //路径的值加入到全局变量res中
+                res += value;
+            } else {
+                //如果不是叶子节点就执行下面的操作
+                if (node.left != null) {
+                    //把子节点和子节点的值分别加入到队列中,这里子节点的值
+                    //就是父节点的值*10+当前节点的值
+                    nodeQueue.add(node.left);
+                    valueQueue.add(value * 10 + node.left.val);
+                }
+                if (node.right != null) {
+                    nodeQueue.add(node.right);
+                    valueQueue.add(value * 10 + node.right.val);
+                }
+            }
+        }
+        return res;
     }
 }
