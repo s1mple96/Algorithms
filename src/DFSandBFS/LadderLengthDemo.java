@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * @author s1mple
  * @create 2021/6/3-21:18
+ * 看不懂
  */
 public class LadderLengthDemo {
     /**
@@ -63,4 +64,6 @@ public class LadderLengthDemo {
         }
         return 0;
     }
+
+
 }
