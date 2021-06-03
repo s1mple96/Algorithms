@@ -33,6 +33,8 @@ public class SumNumbersDemo {
             } else {
                 //如果不是叶子节点就指向下面的操作
                 if (node.right != null) {
+                    //把子节点和叶子节点的值分别加入到栈中,这里子节点的值
+                    //就是父节点的值*10+当前节点的值
                     nodeStack.push(node.right);
                     valueStack.push(value * 10 + node.right.val);
                 }
