@@ -6,6 +6,8 @@ import java.util.Queue;
 /**
  * @author s1mple
  * @create 2021/6/3-17:30
+ * 总结:要想找到被X包围的区域,最简单的一种方式就是从四周开始找,因为如果四周有O,那么他们肯定是不能被包围的,如果还有和
+ * 这个0紧挨着的,也是不能被包围的,否则剩下的如果有O,那么剩下的这些肯定是能被X包围的,理解这个思路很重要
  */
 public class SolveDemo {
     public void solve(char[][] board) {
