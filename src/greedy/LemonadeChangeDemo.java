@@ -3,6 +3,10 @@ package greedy;
 /**
  * @author s1mple
  * @create 2021/6/4-16:12
+ * 总结:
+ *  找零的时候我们并没有先判断5元的数量,而找完之后再判断5元的
+ *  数量是否大于0还是小于0.如果在找零的时候先判断5元的数量也是可以的,
+ *  只不过稍微有点麻烦,因为顾客只要给的不是5元的都要先判断
  */
 public class LemonadeChangeDemo {
     public boolean lemonadeChange(int[] bills) {
