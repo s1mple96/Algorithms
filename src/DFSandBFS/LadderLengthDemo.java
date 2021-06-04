@@ -65,5 +65,43 @@ public class LadderLengthDemo {
         return 0;
     }
 
-
+    public int find(int minlen, Queue<String> startQueue, Queue<String> endQueue, Set<String> dictSet) {
+        int startCount = startQueue.size();
+        int endCount = endQueue.size();
+        boolean start = startCount <= endCount;
+        int count = start ? startCount : endCount;
+        //哪个量少,遍历哪个
+        for (int i = 0; i < count; i++) {
+            //出队
+            String word;
+            if (start) {
+                word = startQueue.poll();
+            } else {
+                word = endQueue.poll();
+            }
+            /**
+             * 这里遍历每一个节点的单词,然后修改其中一个字符,让他成为一个新的单词
+             * 并查看这个新的单词在字典中是否存在,如果存在并且没有被访问过,就加入到队列中
+             */
+            for (int j = 0; j < word.length(); j++) {
+                char[] ch = word.toCharArray();
+                for (char c = 'a'; c <= 'z'; c++) {
+                    if (c == word.charAt(j)) {
+                        continue;
+                    }
+                    ch[j] = c;
+                    //修改其中的一个字符,然后重新构建一个新的单词
+                    String newWord = String.valueOf(ch);
+                    if (dictSet.contains(newWord)) {
+                        if (start) {//从前往后
+                            if (endQueue.contains(newWord)) {
+                                return minlen + 1;
+                            }
+                            if ()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
