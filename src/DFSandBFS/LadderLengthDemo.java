@@ -65,7 +65,7 @@ public class LadderLengthDemo {
         return 0;
     }
 
-    public int find(int minlen, Queue<String> startQueue, Queue<String> endQueue, Set<String> dictSet) {
+    /*public int find(int minlen, Queue<String> startQueue, Queue<String> endQueue, Set<String> dictSet) {
         int startCount = startQueue.size();
         int endCount = endQueue.size();
         boolean start = startCount <= endCount;
@@ -79,10 +79,10 @@ public class LadderLengthDemo {
             } else {
                 word = endQueue.poll();
             }
-            /**
+            *//**
              * 这里遍历每一个节点的单词,然后修改其中一个字符,让他成为一个新的单词
              * 并查看这个新的单词在字典中是否存在,如果存在并且没有被访问过,就加入到队列中
-             */
+             *//*
             for (int j = 0; j < word.length(); j++) {
                 char[] ch = word.toCharArray();
                 for (char c = 'a'; c <= 'z'; c++) {
@@ -114,5 +114,5 @@ public class LadderLengthDemo {
         }
         //如果没有相遇就返回-1
         return -1;
-    }
+    }*/
 }
