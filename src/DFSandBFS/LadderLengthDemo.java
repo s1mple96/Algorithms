@@ -97,11 +97,22 @@ public class LadderLengthDemo {
                             if (endQueue.contains(newWord)) {
                                 return minlen + 1;
                             }
-                            if ()
+                            if (visit.add(newWord)) {
+                                startQueue.add(newWord);
+                            }
+                        } else {
+                            if (startQueue.contains(newWord)) {
+                                return minlen + 1;
+                            }
+                            if (visit.add(newWord)) {
+                                endQueue.add(newWord);
+                            }
                         }
                     }
                 }
             }
         }
+        //如果没有相遇就返回-1
+        return -1;
     }
 }
