@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * @author s1mple
  * @create 2021/6/4-17:01
+ * 总结:
+ *      贪心算法和动态规划不一样,贪心算法只需要在每步做出局部最优解即可.
  */
 public class CandyDemo {
     public int candy(int[] ratings) {
