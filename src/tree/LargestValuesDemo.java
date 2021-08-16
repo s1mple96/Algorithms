@@ -1,11 +1,9 @@
 package tree;
 
-import 数据结构.TreeNode;
+import dataStructure.TreeNode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * @author s1mple

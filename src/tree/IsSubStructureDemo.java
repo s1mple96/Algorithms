@@ -1,6 +1,6 @@
 package tree;
 
-import 数据结构.TreeNode;
+import dataStructure.TreeNode;
 
 /**
  * B是A的子结构不一定是从根节点开始判断B是否是A的子结构，

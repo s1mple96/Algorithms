@@ -1,6 +1,6 @@
 package tree;
 
-import 数据结构.TreeNode;
+import dataStructure.TreeNode;
 
 /**
  * 递归的方式,每次取中间值作为当前节点即可

@@ -1,6 +1,5 @@
-package 数据结构.Arrays;
+package dataStructure.Arrays;
 
-import java.util.ArrayList;
 /**
  * @author s1mple
  * @create 2021/7/2-16:20

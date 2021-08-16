@@ -1,6 +1,4 @@
-package 数据结构.List;
-
-import java.util.Date;
+package dataStructure.List;
 
 /**
  * @author s1mple

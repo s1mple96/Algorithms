@@ -1,4 +1,4 @@
-package 数据结构.Queue;
+package dataStructure.Queue;
 
 /**
  * @author s1mple

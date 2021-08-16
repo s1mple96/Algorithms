@@ -1,10 +1,6 @@
 package tree;
 
-import 数据结构.TreeNode;
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import dataStructure.TreeNode;
 
 /**
  * @author s1mple

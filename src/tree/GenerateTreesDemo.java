@@ -1,7 +1,6 @@
 package tree;
 
-import sun.reflect.generics.tree.Tree;
-import 数据结构.TreeNode;
+import dataStructure.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package tree;
 
-import 数据结构.TreeNode;
+import dataStructure.TreeNode;
 
 /**
  * @author s1mple
