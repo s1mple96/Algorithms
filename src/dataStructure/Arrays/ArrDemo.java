@@ -18,16 +18,10 @@ public class ArrDemo {
     transient Object[] elementData;
 
     /**
-     * 我们来看一下他常见的几个方法,首先就是get方法
+     * 常见的数据结构种类也不是很多，比如，数组，链表，队列，栈，树，图，等，还有数组和链表结合的，
+     * 比如HashMap.但每一种又会有很多的分类，比如链表有单向的，双向的，环形的，队列又有一般的队列
+     * 和双端的队列，树又分为二叉树，AVL树，红黑树，B+树，2-3树，哈夫曼树，字典树等等。
+     * 数组是最简单的一种数据结构，基本上没什么可说的。
      */
-    /*public E get(int index){
-        if (index >= size) {
-            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
-        }
-
-        E oldValue = (E) elementData[index];
-        elementData[index] = element;
-        return oldValue;
-    }*/
 
 }
