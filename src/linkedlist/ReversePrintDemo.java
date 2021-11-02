@@ -56,4 +56,29 @@ public class ReversePrintDemo {
         }
         return res;
     }
+
+    public static int[] reversePrint3(ListNode head) {
+        Stack<ListNode> stack = new Stack<>();
+//        ListNode temp = head;
+        while (head != null) {
+            stack.push(head);
+            head = head.next;
+        }
+        int[] res = new int[stack.size()];
+        int size = stack.size();
+        for (int i = 0; i < size; i++) {
+            res[i] = stack.pop().val;
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        ListNode node = new ListNode(1);
+        ListNode node3 = new ListNode(3);
+        ListNode node2 = new ListNode(2);
+        node.next = node3;
+        node3.next = node2;
+        int[] ints = reversePrint3(node);
+        System.out.println(ints);
+    }
 }
