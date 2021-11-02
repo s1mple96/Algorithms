@@ -15,6 +15,7 @@ public class MergeInBetweenDemo {
      * @return
      */
     public ListNode mergeTwoLists(ListNode linked1, ListNode linked2) {
+        //下面4行是空判断
         if (linked1 == null) {
             return linked2;
         }
@@ -31,24 +32,26 @@ public class MergeInBetweenDemo {
     }
 
     public ListNode mergeTwoLists2(ListNode linked1, ListNode linked2) {
-        if (linked1 == null) {
+        //下面4行是空判断
+        if (linked1==null)
             return linked2;
-        }
-        if (linked2 == null) {
+        if (linked2==null)
             return linked1;
-        }
-        ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
+        ListNode dummy = new ListNode(0);//新的链表
+        ListNode curr = dummy;//指针
         while (linked1 != null && linked2 != null) {
-            //比较一下,哪个小就把哪个放到新的链表中
-            if (linked1.val > linked2.val) {
-                cur.next = linked2;
+           //比较一下哪个小酒放到新链表中
+            if (linked1.val <= linked2.val) {
+                curr.next = linked1;
+                linked1 = linked1.next;
+            } else {
+                curr.next = linked2;
                 linked2 = linked2.next;
             }
-            cur = cur.next;
+            curr = curr.next;
         }
-        //然后把哪个不为空的链表挂到新的链表中
-        cur.next = linked1 == null ? linked2 : linked1;
+        //然后把那个不为空的链表挂到新的链表中
+        curr.next = linked1 == null ? linked2 : linked1;
         return dummy.next;
     }
 }
