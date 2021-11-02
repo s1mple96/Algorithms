@@ -31,6 +31,17 @@ public class MergeInBetweenDemo {
         }
     }
 
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        //只要有一个为空，就返回另一个
+        if (l1 == null || l2 == null) {
+            return l2 == null ? l1 : l2;
+        }
+        //把小的赋值给first
+        ListNode first = (l2.val < l1.val) ? l2 : l1;
+        first.next = mergeTwoLists3(first.next, first == l1 ? l2 : l1);
+        return first;
+    }
+
     public ListNode mergeTwoLists2(ListNode linked1, ListNode linked2) {
         //下面4行是空判断
         if (linked1==null)
