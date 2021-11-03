@@ -33,11 +33,11 @@ public class DeleteNodeDemo {
         if (head == null) {
             return head;
         }
-        //如果head结点不等于空，并且head结点的值等于val，我们直接返回head结点的下一 个结点
+        //如果head结点不等于空，并且head结点的值等于val，我们直接返回head结点的下一个结点
         if (head.val == val) {
             return head.next;
         }
-        //否则也就是说头结点是删不掉的，我们就递归调用，从头结点的下一个开始继续上面的 操作，直到删除为止
+        //否则也就是说头结点是删不掉的，我们就递归调用，从头结点的下一个开始继续上面的操作直到删除为止
         head.next = deleteNode(head.next, val);
         return head;
     }
