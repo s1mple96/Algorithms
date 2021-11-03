@@ -9,7 +9,6 @@ import java.util.Stack;
  * @create 2021/5/20-18:21
  */
 public class GetKthFromEndDemo {
-
     //全局变量,记录递归往回走的时候访问的节点数量
     int size;
     public ListNode getKthFromEnd(ListNode head, int k) {
@@ -30,6 +29,7 @@ public class GetKthFromEndDemo {
             return node;
         }
     }
+
     /**
      * 栈解法
      * @param head
